@@ -31,12 +31,12 @@ This lab focuses on DNS configuration and testing using A-Records, Local DNS Cac
       ```
       Observe that the ping fails.
 
-![image](https://github.com/user-attachments/assets/fbf28958-28b3-4b2d-86d7-ae5fd39b8bd3)
+<img src="https://imgur.com/Eni7Nur.png" alt="dns lab pic"/>
 
 - Run the following command to check for the DNS record: 'nslookup mainframe'
 Observe that it fails (no DNS record exists).
 
-![image](https://github.com/user-attachments/assets/23eb5ae0-a5fd-407f-87e9-49ace68a5513)
+<img src="https://imgur.com/Gu8CYOX.png" alt="dns lab pic"/>
 
 4. **Create a DNS A-Record**:
     - Switch to **DC-1**.
@@ -44,14 +44,14 @@ Observe that it fails (no DNS record exists).
     - Navigate to the appropriate forward lookup zone.
     - Add an **A-Record** for `mainframe` and point it to **DC-1's Private IP address**.
   
-![image](https://github.com/user-attachments/assets/2bcb0188-c6bc-4336-981b-7a7724c247fc)
+<img src="https://imgur.com/qXPhvAD.png" alt="dns lab pic"/>
 
-![image](https://github.com/user-attachments/assets/2782f492-482b-434b-8ef3-583db4574618)
+<img src="https://imgur.com/qwPPMoB.png" alt="dns lab pic"/>
 
 - **Right Click in open space**
-![image](https://github.com/user-attachments/assets/69bb0dec-bc01-43b2-823f-4eaa405dcc4f)
+<img src="https://imgur.com/rcIg1dU.png" alt="dns lab pic"/>
 
-![image](https://github.com/user-attachments/assets/47a7481d-2dd1-4dea-a378-bde3a75f8558)
+<img src="https://imgur.com/rwxt6Gc.png" alt="dns lab pic"/>
 
 5. **Verify Connectivity to "mainframe"**:
     - Go back to **Client-1**.
@@ -61,7 +61,7 @@ Observe that it fails (no DNS record exists).
       ```
       Observe that the ping is now successful.
 
-![image](https://github.com/user-attachments/assets/74a15c6b-b607-4043-8f53-2cd84e375649)
+<img src="https://imgur.com/ytF3Gnt.png" alt="dns lab pic"/>
 
 ---
 
@@ -70,7 +70,7 @@ Observe that it fails (no DNS record exists).
 1. **Modify the A-Record**:
     - On **DC-1**, change the `mainframe` A-Record to point to `8.8.8.8`.
   
-![image](https://github.com/user-attachments/assets/7ae441ce-72b2-4515-b52e-29d125778b3a)
+<img src="https://imgur.com/RFDW63r.png" alt="dns lab pic"/>
 
 2. **Ping "mainframe" from Client-1**:
     - On **Client-1**, run:
@@ -78,7 +78,7 @@ Observe that it fails (no DNS record exists).
       ping mainframe
       ```
       Observe that the ping still resolves to the old address (cached locally).
-![image](https://github.com/user-attachments/assets/363c8766-1755-40c5-905f-c67753ce0993)
+<img src="https://imgur.com/UPV2EqX.png" alt="dns lab pic"/>
 
 3. **Check the Local DNS Cache**:
     - On **Client-1**, display the DNS cache using:
@@ -86,7 +86,7 @@ Observe that it fails (no DNS record exists).
       ipconfig /displaydns
       ```
       Observe the cached record for `mainframe`.
-![image](https://github.com/user-attachments/assets/05cb1dec-a102-4f93-94b3-33af299f117b)
+<img src="https://imgur.com/9o7BdQt.png" alt="dns lab pic"/>
 
 4. **Flush the DNS Cache**:
     - Clear the local DNS cache using (you may need to run powershell as administrator):
@@ -107,7 +107,7 @@ Observe that it fails (no DNS record exists).
       ```
       Observe that it now resolves to the updated address (`8.8.8.8`).
 
-![image](https://github.com/user-attachments/assets/c7192eb1-93a6-4d6d-b9af-2b0b57ee5260)
+<img src="https://imgur.com/WBb9Fmv.png" alt="dns lab pic"/>
 
 ---
 
@@ -120,9 +120,9 @@ Observe that it fails (no DNS record exists).
       - Alias: `bubble`.
       - Points to: `www.google.com`.
      
-![image](https://github.com/user-attachments/assets/8f815371-4a40-4733-88b3-2d5dad94370b)
+<img src="https://imgur.com/TRVyrpq.png" alt="dns lab pic"/>
 
-![image](https://github.com/user-attachments/assets/59a16d98-f823-45cf-a53b-223796458b55)
+<img src="https://imgur.com/rTZ5NqR.png" alt="dns lab pic"/>
 
 2. **Test the CNAME Record**:
     - On **Client-1**, ping `search`:
@@ -138,7 +138,7 @@ Observe that it fails (no DNS record exists).
       ```
       Observe the results, ensuring the alias resolves to `www.google.com`.
 
-![image](https://github.com/user-attachments/assets/307e3e94-055d-4a5e-b9dc-78c0316e9dd5)
+<img src="https://imgur.com/9D0cZON.png" alt="dns lab pic"/>
 
 ---
 
