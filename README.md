@@ -89,7 +89,7 @@ Observe that it fails (no DNS record exists).
 <img src="https://imgur.com/9o7BdQt.png" alt="dns lab pic"/>
 
 4. **Flush the DNS Cache**:
-    - Clear the local DNS cache using (you may need to run powershell as administrator):
+    - Run powershell as administrator and Clear the local DNS cache using
       ```bash
       ipconfig /flushdns
       ```
@@ -117,7 +117,7 @@ Observe that it fails (no DNS record exists).
     - On **DC-1**, open the **DNS Manager**.
     - Navigate to the appropriate forward lookup zone.
     - Add a **CNAME Record**:
-      - Alias: `bubble`.
+      - Alias: `search`.
       - Points to: `www.google.com`.
      
 <img src="https://imgur.com/TRVyrpq.png" alt="dns lab pic"/>
